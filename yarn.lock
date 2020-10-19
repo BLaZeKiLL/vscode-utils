@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@types/vscode@^1.50.0":
+  version "1.50.0"
+  resolved "https://artifacts.dell.com/artifactory/api/npm/npm/@types/vscode/-/vscode-1.50.0.tgz#9f409d9dce22ebc11e2fcdd28fabd1917a961bb7"
+  integrity sha1-n0Cdnc4i68EeL83Sj6vRkXqWG7c=
+
 typescript@^4.0.3:
   version "4.0.3"
   resolved "https://artifacts.dell.com/artifactory/api/npm/npm/typescript/-/typescript-4.0.3.tgz#153bbd468ef07725c1df9c77e8b453f8d36abba5"
