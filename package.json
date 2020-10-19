@@ -1,0 +1,26 @@
+{
+  "name": "@codeblaze/vscode-utils",
+  "version": "1.0.0",
+  "description": "Wrapper for vscode extension API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BLaZeKiLL/vscode-utils.git"
+  },
+  "keywords": [
+    "vscode"
+  ],
+  "author": "Devashish Lal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BLaZeKiLL/vscode-utils/issues"
+  },
+  "homepage": "https://github.com/BLaZeKiLL/vscode-utils#readme",
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
+}
