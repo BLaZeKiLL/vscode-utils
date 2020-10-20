@@ -1,5 +1,7 @@
 import * as vscode from 'vscode';
 
+import { TemplateFunction } from 'dot';
+
 export interface ViewMeta {
   type: string;
   title: string;
@@ -13,7 +15,10 @@ export interface ViewMeta {
 }
 
 export interface IView<T> {
-  model() : T; 
+  model : T;
+  panel? : vscode.WebviewPanel;
+  template? : TemplateFunction;
+  onInit: () => void;
 }
 
 export const View = (config : ViewMeta) : Function => {

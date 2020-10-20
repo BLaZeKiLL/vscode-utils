@@ -14,6 +14,8 @@ const inflate = (view : IView<any>, context: vscode.ExtensionContext) : vscode.W
 
   let panel = vscode.window.createWebviewPanel(meta.type, meta.title, meta.showOptions, meta.options);
 
+  view.panel = panel;
+
   const templatePath = path.join(
     context.extensionPath,
     'dist',
@@ -21,15 +23,19 @@ const inflate = (view : IView<any>, context: vscode.ExtensionContext) : vscode.W
     meta.view.template
   );
 
-  const template = fs.readFileSync(templatePath).toString("utf-8");
+  const template = dot.compile(fs.readFileSync(templatePath).toString("utf-8"));
 
-  panel.webview.html = dot.compile(template)(view.model());
+  view.template = template;
+
+  panel.webview.html = template(view.model);
   
   if (context) {
     panel.onDidDispose(() => {
       panel = undefined as any;
     }, undefined, context.subscriptions);
   }
+
+  view.onInit();
 
   return panel;
 };
